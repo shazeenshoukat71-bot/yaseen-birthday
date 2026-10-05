@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Happy Birthday Yaseen ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap');
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f7ece9;color:#503b3e;font-family:'Cormorant Garamond',serif;overflow-x:hidden}
+.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;position:relative}
+.welcome{background:radial-gradient(circle at 50% 35%,#fff9f6 0,#f6e5e3 42%,#ead3d1 100%);text-align:center}
+.content{max-width:700px;position:relative;z-index:2}
+.small{font-family:Montserrat,sans-serif;letter-spacing:4px;font-size:10px;color:#967074;text-transform:uppercase}
+h1{font-family:'Great Vibes',cursive;font-weight:400;color:#744b54;font-size:78px;line-height:1.05;margin:14px 0}
+.birthday{font-family:'Cormorant Garamond',serif;font-size:23px;letter-spacing:2px;color:#79585d}
+.message{max-width:500px;margin:22px auto;font-size:18px;line-height:1.55;color:#6b5053}
+.btn{border:0;background:#80535c;color:white;padding:14px 27px;border-radius:30px;font-family:Montserrat,sans-serif;font-size:11px;letter-spacing:1.5px;cursor:pointer;box-shadow:0 9px 20px #a67c8233;transition:.25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px #a67c8250}
+.music{position:fixed;right:17px;top:17px;z-index:50;border:1px solid #c69fa3;background:#fff8f5dd;color:#704c53;border-radius:30px;padding:10px 14px;font-family:Montserrat,sans-serif;font-size:10px;cursor:pointer;backdrop-filter:blur(6px)}
+.heart{position:fixed;bottom:-30px;color:#a8737b;opacity:.45;font-size:18px;animation:float 7s linear infinite;pointer-events:none;z-index:1}
+@keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.45}100%{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+.gift{font-size:42px;margin:14px}
+#letters{background:linear-gradient(135deg,#f6e8e6,#ead6d4);display:block;padding-top:65px}
+.section{max-width:1000px;margin:auto;text-align:center}
+.section h2,.final h2{font-family:'Great Vibes',cursive;font-size:53px;font-weight:400;color:#744b54;margin:5px}
+.sub{font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:2px;color:#987579;margin:8px 0 32px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:880px;margin:auto}
+.card{height:250px;perspective:1200px;cursor:pointer;position:relative}
+.env{position:absolute;inset:0;transition:transform .2s}
+.card:hover .env{transform:translateY(-4px)}
+.back{position:absolute;inset:8px 0 0;background:#d8b4b4;border-radius:7px;box-shadow:0 16px 28px #6e4b501e}
+.front{position:absolute;inset:28px 0 0;background:linear-gradient(145deg,#ead0ce,#d9b2b1);clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%);z-index:4;border-radius:0 0 7px 7px}
+.flap{position:absolute;left:0;right:0;top:8px;height:148px;background:linear-gradient(145deg,#e4c2c1,#d1a5a5);clip-path:polygon(0 0,50% 72%,100% 0);z-index:7;transform-origin:top;transition:.8s cubic-bezier(.2,.7,.2,1)}
+.paper{position:absolute;left:17px;right:17px;bottom:14px;height:175px;background:#fffaf6;border-radius:5px;padding:20px;z-index:3;transform:translateY(118px);transition:.8s cubic-bezier(.2,.7,.2,1);box-shadow:0 7px 16px #5c3b4018}
+.paper h3{font-family:'Great Vibes',cursive;font-size:29px;font-weight:400;color:#744b54;margin:0 0 7px}
+.paper p{font-size:15px;line-height:1.35;margin:0}
+.seal{position:absolute;z-index:9;left:50%;top:103px;transform:translateX(-50%);width:47px;height:47px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#b87982,#7c4953);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;transition:.4s;box-shadow:0 4px 10px #55313a44}
+.label{position:absolute;z-index:8;bottom:24px;left:8px;right:8px;font-family:Montserrat,sans-serif;font-size:9px;letter-spacing:1.5px;color:#78545b;text-transform:uppercase}
+.card.open .flap{transform:rotateX(180deg);z-index:2}
+.card.open .paper{transform:translateY(-34px);z-index:8}
+.card.open .seal{opacity:0;transform:translateX(-50%) scale(.3)}
+.card.open .label{opacity:0}
+.last{grid-column:1/-1;max-width:420px;width:100%;margin:auto}
+.final{display:none;min-height:100vh;background:radial-gradient(circle at center,#fffaf7,#efdcd9);text-align:center}
+.final.show{display:flex}
+.final h2{font-size:70px}
+.final p{font-size:20px;line-height:1.55;max-width:580px;margin:18px auto}
+.signature{font-family:'Great Vibes',cursive;font-size:36px;color:#81565e;margin-top:25px}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.conf{position:absolute;top:-20px;animation:fall 4s linear forwards;font-size:18px}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+@media(max-width:650px){h1{font-size:58px}.grid{grid-template-columns:1fr}.last{grid-column:auto}.card{height:235px}.final h2{font-size:55px}}
+</style>
+</head>
+<body>
+
+<button class="music" id="musicBtn" onclick="toggleMusic()">♫ Music: OFF</button>
+<audio id="music" loop>
+  <source src="" type="audio/mpeg">
+</audio>
+
+<section class="screen welcome" id="welcome">
+  <div class="content">
+    <div class="small">A little birthday surprise</div>
+    <div class="gift">🎁</div>
+    <h1>Happy Birthday,<br>Yaseen ♡</h1>
+    <div class="birthday">for someone very special to my heart</div>
+    <p class="message">I couldn't put a real gift in your hands from far away… so I made you something you can open whenever you need a little love.</p>
+    <button class="btn" onclick="startGift()">OPEN YOUR BIRTHDAY GIFT ♡</button>
+  </div>
+</section>
+
+<section id="letters">
+  <div class="section">
+    <div class="small">Five little letters</div>
+    <h2>Open One Whenever You Need Me</h2>
+    <div class="sub">CLICK AN ENVELOPE TO OPEN IT</div>
+    <div class="grid">
+
+      <div class="card" onclick="this.classList.toggle('open')"><div class="env">
+        <div class="back"></div><div class="paper"><h3>Open When You Miss Me</h3>
+        <p>If you miss me, look at the sky for a moment. Somewhere beneath that same sky, I'm thinking of you too. Distance can keep us apart, but it can't make you any less close to my heart. ♡</p></div>
+        <div class="front"></div><div class="flap"></div><div class="seal">♥</div><div class="label">Open when you miss me</div>
+      </div></div>
+
+      <div class="card" onclick="this.classList.toggle('open')"><div class="env">
+        <div class="back"></div><div class="paper"><h3>Open When You Need a Hug</h3>
+        <p>Imagine my arms around you right now — no explanations, no words, just a long, warm hug. Close your eyes for a second and pretend the distance disappeared. 🤍</p></div>
+        <div class="front"></div><div class="flap"></div><div class="seal">♡</div><div class="label">Open when you need a hug</div>
+      </div></div>
+
+      <div class="card" onclick="this.classList.toggle('open')"><div class="env">
+        <div class="back"></div><div class="paper"><h3>Open After a Bad Day</h3>
+        <p>Today was only one page of your story. Be gentle with yourself tonight. Rest, breathe, and remember that one difficult day doesn't take away everything beautiful that is still waiting for you. 🌙</p></div>
+        <div class="front"></div><div class="flap"></div><div class="seal">♥</div><div class="label">Open after a bad day</div>
+      </div></div>
+
+      <div class="card" onclick="this.classList.toggle('open')"><div class="env">
+        <div class="back"></div><div class="paper"><h3>Open When You Need Motivation</h3>
+        <p>Keep going, Yaseen. Even the tiny steps count. I hope one day you look back at this chapter and feel proud that you didn't give up. I believe in the person you're becoming. ✨</p></div>
+        <div class="front"></div><div class="flap"></div><div class="seal">✦</div><div class="label">Open when you need motivation</div>
+      </div></div>
+
+      <div class="card last" onclick="this.classList.toggle('open')"><div class="env">
+        <div class="back"></div><div class="paper"><h3>Open When You Need to Know</h3>
+        <p>Some feelings are too big for a little screen. So I'll keep this simple: you are deeply special to me, Yaseen. No matter how many miles are between us, you have a beautiful little place in my heart. Always. ♡</p></div>
+        <div class="front"></div><div class="flap"></div><div class="seal">♥</div><div class="label">Open when you need to know</div>
+      </div></div>
+
+    </div>
+    <p style="font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:1px;color:#96767a;margin:34px 0 20px">AND NOW… ONE LAST SURPRISE ♡</p>
+    <button class="btn" onclick="finalSurprise()">OPEN THE FINAL SURPRISE</button>
+  </div>
+</section>
+
+<section class="screen final" id="final">
+  <div class="content">
+    <div class="gift">♡</div>
+    <div class="small">the last little letter</div>
+    <h2>My Birthday Wish For You</h2>
+    <p>May this new year of your life bring you peace, success, beautiful memories and every little thing your heart quietly wishes for.</p>
+    <p>And whenever life feels heavy, I hope you remember that somewhere, someone is genuinely wishing for your happiness.</p>
+    <div class="signature">Happy Birthday, Yaseen ♡</div>
+    <button class="btn" onclick="location.href='#welcome'" style="margin-top:25px">START AGAIN</button>
+  </div>
+</section>
+
+<div id="confetti"></div>
+
+<script>
+function startGift(){
+ document.getElementById('letters').scrollIntoView({behavior:'smooth'});
+ burst();
+}
+function finalSurprise(){
+ document.getElementById('final').classList.add('show');
+ document.getElementById('final').scrollIntoView({behavior:'smooth'});
+ burst(); burst();
+}
+function burst(){
+ const box=document.getElementById('confetti');
+ const symbols=['♡','♥','✦','✧','•'];
+ for(let i=0;i<24;i++){
+   const x=document.createElement('span'); x.className='conf';
+   x.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+   x.style.left=Math.random()*100+'vw';
+   x.style.animationDelay=(Math.random()*1.2)+'s';
+   x.style.fontSize=(12+Math.random()*16)+'px';
+   box.appendChild(x); setTimeout(()=>x.remove(),5000);
+ }
+}
+function makeHeart(){
+ const h=document.createElement('div');h.className='heart';h.textContent=['♡','♥','✦'][Math.floor(Math.random()*3)];
+ h.style.left=Math.random()*100+'vw';h.style.animationDuration=(5+Math.random()*5)+'s';h.style.fontSize=(12+Math.random()*17)+'px';
+ document.body.appendChild(h);setTimeout(()=>h.remove(),10000);
+}
+setInterval(makeHeart,900);
+
+let playing=false;
+function toggleMusic(){
+ const m=document.getElementById('music');
+ if(!m.getAttribute('src')){alert('Add your favorite MP3 file as "music.mp3" next to this HTML file to enable the music button.');return;}
+ if(playing){m.pause();playing=false;document.getElementById('musicBtn').textContent='♫ Music: OFF'}
+ else{m.play();playing=true;document.getElementById('musicBtn').textContent='♫ Music: ON'}
+}
+</script>
+</body>
+</html>
